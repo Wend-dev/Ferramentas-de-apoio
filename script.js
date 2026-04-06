@@ -249,7 +249,7 @@ CPF: [CPF]`,
 
 {gender} {name}, {greeting}!
 
-Em atenção à sua solicitação realizada por meio do protocolo de n.º {protocol}, segue em anexo o demonstrativo para comprovação de imposto de renda referente ao ano de 2024. 
+Em atenção à sua solicitação realizada por meio do protocolo de n.º {protocol}, segue em anexo o demonstrativo para comprovação de imposto de renda referente ao ano de 2025. 
 
 Acrescentamos que o demonstrativo também está disponível em nosso aplicativo "OdontoGroup – Associado".`,
 
