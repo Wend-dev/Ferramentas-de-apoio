@@ -1,3 +1,4 @@
+<script>
 // ─── Navigation ───
 function showSection(sectionId, el) {
   document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
@@ -151,49 +152,255 @@ function capitalizarNome(nome) {
 
 // ─── Texts ───
 const texts = {
-  tentativaContato: `Título: ODONTOGROUP - TENTATIVA DE CONTATO\n\n{gender} {name}, {greeting}!\n\nTentamos contato através do telefone {phone}, porém não obtivemos sucesso.\nPor gentileza, entre em contato com a nossa central de atendimento o mais breve possível referente à sua solicitação do protocolo de atendimento n.º {protocol}.`,
+  tentativaContato: `Título: ODONTOGROUP - TENTATIVA DE CONTATO
 
-  acusamosRecebimento: `{gender} {name}, {greeting}!\n\nAcusamos o recebimento da sua solicitação por meio do protocolo de n.º {protocol}, iremos verificar as informações relatadas e em breve retornaremos com mais informações.`,
+{gender} {name}, {greeting}!
 
-  comprovanteCancelamento: `Título: ODONTOGROUP - COMPROVANTE DE CANCELAMENTO\n\n{gender} {name}, {greeting}!\n\nEm atenção à sua solicitação realizada através do protocolo de n.º {protocol}, segue em anexo o comprovante de cancelamento do contrato.`,
+Tentamos contato através do telefone {phone}, porém não obtivemos sucesso.
+Por gentileza, entre em contato com a nossa central de atendimento o mais breve possível referente à sua solicitação do protocolo de atendimento n.º {protocol}.`,
 
-  acusacaoReembolso: `{gender} {name}, {greeting}!\n\nAcusamos o recebimento da sua solicitação através do protocolo de n.º {protocol} e informamos que a documentação foi direcionada ao setor responsável para análise.\nEm breve retornaremos o contato com mais informações.`,
+  acusamosRecebimento: `{gender} {name}, {greeting}!
 
-  envioRedes: `Título: ODONTOGROUP - REDES DE ATENDIMENTO\n\n{gender} {name}, {greeting}!\n\nEm atenção à sua solicitação realizada sob protocolo de n° {protocol}, seguem abaixo redes de atendimento conforme solicitado.\n\n(indicação de rede)\n\nOrientamos que entre em contato com as clínicas para realizar o agendamento de consulta, caso tenha dificuldade em realizar o contato junto as clínicas, entre em contato com a nossa central de atendimento para que possamos lhe auxiliar.`,
+Acusamos o recebimento da sua solicitação por meio do protocolo de n.º {protocol}, iremos verificar as informações relatadas e em breve retornaremos com mais informações.`,
 
-  agendamento: `Título: ODONTOGROUP - AGENDAMENTO DE CONSULTA\n\n{gender} {name}, {greeting}!\n\nEm atendimento à sua solicitação, realizada sob protocolo de n° {protocol}, listamos abaixo as informações referentes ao agendamento de sua consulta:\n\nAvaliação - {agendEspecialidade}\nDia: {agendDataHora}\nClínica: {agendClinica}\n\nPor gentileza, chegue à consulta com antecedência de 10 minutos e leve raio-x, caso possua, isso facilita o seu atendimento.\n\nObs.: Caso não consiga comparecer ao agendamento informado acima, na data e horário marcado, por gentileza, orientamos que entre em contato diretamente com a clínica para realizar o reagendamento de sua consulta no prazo indicado (24horas de antecedência).`,
+  comprovanteCancelamento: `Título: ODONTOGROUP - COMPROVANTE DE CANCELAMENTO
 
-  carteirinha: `Título: ODONTOGROUP - CARTEIRINHA\n\n{gender} {name}, {greeting}!\n\nEm atenção à sua solicitação realizada por meio do protocolo de n.º {protocol}, segue em anexo sua carteirinha virtual do plano odontológico.\n\nBaixe nosso aplicativo para acessá-la de forma simples e online. \nCaso ainda não possua nosso aplicativo, basta buscar por "OdontoGroup Associado" na loja de aplicativos do seu dispositivo celular e realizar o primeiro acesso.`,
+{gender} {name}, {greeting}!
 
-  semCPF: `Prezado(a) cliente, {greeting}!\n\nAcusamos o recebimento da sua solicitação e para que possamos localizar o seu contrato, informe-nos seu nome completo, CPF e telefone.`,
+Em atenção à sua solicitação realizada através do protocolo de n.º {protocol}, segue em anexo o comprovante de cancelamento do contrato.`,
 
-  formularioReembolso: `Título: ODONTOGROUP - FORMULÁRIO DE REQUISIÇÃO DE REEMBOLSO\n\n{gender} {name}, {greeting}!\n\nEm atenção à sua solicitação realizada através do protocolo de n.º {protocol}, segue em anexo o Formulário de Requisição de Reembolso. \n\nPara que nossa operadora possa prosseguir com a análise do reembolso, solicitamos a leitura do formulário com atenção, devido às exigências quanto ao preenchimento de todos os campos existentes para andamento do processo de reembolso.\n\nLembrando que, no formulário há campos referentes aos tratamentos odontológicos onde o profissional cirurgião-dentista deverá preencher, carimbar e assinar.\n\nJuntamente ao formulário de reembolso, é necessário encaminhar as radiografias anteriores e posteriores ao procedimento realizado.\n\nSolicitamos também que encaminhe, juntamente às documentações já mencionadas, a nota fiscal ou recibo de pagamento emitidos pelo Cirurgião-Dentista, com o valor correspondente aos tratamentos descritos no formulário, além do comprovante de pagamento bancário.\n\nEsclarecemos que o comprovante de pagamento referido pode ser a via emitida pela máquina no caso de pagamento via cartão, um print do desconto em seu aplicativo bancário ou comprovante de transferência no caso de pagamento por PIX ou transferência bancária.\n\nAo realizar o envio da documentação completa e análise da solicitação pela Operadora, sendo essa aprovada, o pagamento do reembolso será em até 30 dias.`,
+  acusacaoReembolso: `{gender} {name}, {greeting}!
 
-  boleto: `Título: ODONTOGROUP - BOLETO\n\n{gender} {name}, {greeting}!\n\nEm atenção à sua solicitação realizada através do protocolo de n.º {protocol}, segue em anexo o boleto referente ao período solicitado.`,
+Acusamos o recebimento da sua solicitação através do protocolo de n.º {protocol} e informamos que a documentação foi direcionada ao setor responsável para análise.
+Em breve retornaremos o contato com mais informações.`,
 
-  guiaContratual: `Título: ODONTOGROUP - GUIA DE LEITURA CONTRATUAL\n\n{gender} {name}, {greeting}!\n\nEm atenção à sua solicitação realizada por meio do protocolo de n.º {protocol}, segue em anexo o Guia de Leitura Contratual contendo todas as informações referente ao produto contratado, inclusive a cobertura do plano odontológico.`,
+  envioRedes: `Título: ODONTOGROUP - REDES DE ATENDIMENTO
 
-  exclusaoProposta: `Título: ODONTOGROUP - EXCLUSÃO DE PROPOSTA\n\nPrezados, {greeting}!\n\nConforme atendimento realizado através do protocolo de n.º {protocol}, por gentileza, efetuar o cancelamento da proposta em aberto nos dados abaixo:\n\nNome: [NOME COMPLETO]\nCPF: [CPF]`,
+{gender} {name}, {greeting}!
 
-  demonstrativoIR: `Título: ODONTOGROUP - DEMONSTRATIVO PARA IMPOSTO DE RENDA\n\n{gender} {name}, {greeting}!\n\nEm atenção à sua solicitação realizada por meio do protocolo de n.º {protocol}, segue em anexo o demonstrativo para comprovação de imposto de renda referente ao ano de 2024. \n\nAcrescentamos que o demonstrativo também está disponível em nosso aplicativo "OdontoGroup – Associado".`,
+Em atenção à sua solicitação realizada sob protocolo de n° {protocol}, seguem abaixo redes de atendimento conforme solicitado.
 
-  demonstrativoPJ: `Título: ODONTOGROUP - DEMONSTRATIVO PARA IMPOSTO DE RENDA - PJ\n\n{gender} {name}, {greeting}!\n\nEm atendimento à sua solicitação realizada por meio do protocolo de n.º {protocol}, informamos que, por se tratar de um plano empresarial, o seu demonstrativo para Imposto de Renda deve ser solicitado diretamente ao setor de Recursos Humanos (RH) da empresa xxxxxxxxxxxxx.\n\nIsso ocorre porque, nessa modalidade de contrato, os valores relacionados ao plano são administrados e registrados pela própria empresa responsável pelo convênio, que possui acesso ao detalhamento das contribuições utilizadas para fins de declaração.\nDessa forma, orientamos que entre em contato com a empresa/sindicato/órgão para solicitar o documento ou obter as orientações necessárias para emissão do demonstrativo.`,
+(indicação de rede)
 
-  alteracaoPlano: `Título: ODONTOGROUP - ALTERAÇÃO DE PLANO\n\n{gender} {name}, {greeting}!\n\nAcusamos o recebimento da sua solicitação por meio do protocolo de n.º {protocol} e informamos que a documentação encaminhada foi devidamente direcionada ao setor responsável para análise e finalização do processo.\n\nEsclarecemos que, a partir do primeiro dia do mês seguinte, a alteração estará vigente em seu cadastro e o plano poderá ser utilizado normalmente, conforme as regras e diretrizes do seu plano odontológico.\n\nReforçamos que é possível realizar o upgrade para qualquer um de nossos planos odontológicos a qualquer momento, de forma simples e sem a necessidade de aguardar um prazo específico. Entretanto, para realizar a regressão para um plano de menor valor (downgrade), é necessário observar o prazo mínimo de 12 meses a partir da última alteração contratual.`,
+Orientamos que entre em contato com as clínicas para realizar o agendamento de consulta, caso tenha dificuldade em realizar o contato junto as clínicas, entre em contato com a nossa central de atendimento para que possamos lhe auxiliar.`,
 
-  contratoNovo: `Título: ODONTOGROUP - INFORMAÇÕES SOBRE O PLANO\n\n{gender} {name}, {greeting}!\n\nAcusamos o recebimento da sua solicitação por meio do protocolo de n.º {protocol} e informamos que o início de vigência do seu plano está previsto para o dia XXXXX. A partir desta data, o acesso ao aplicativo estará liberado, permitindo a consulta detalhada dos serviços contratados, bem como demais funcionalidades disponíveis para o seu plano.\n\nAdicionalmente, informamos que, em breve, nossa equipe de boas-vindas entrará em contato para confirmar os seus dados cadastrais e fornecer todas as orientações necessárias sobre os benefícios contratados, garantindo que você aproveite ao máximo tudo o que o plano oferece.`,
+  agendamento: `Título: ODONTOGROUP - AGENDAMENTO DE CONSULTA
 
-  solicitaCancelamento: `Título: ODONTOGROUP - SOLICITAÇÃO DE CANCELAMENTO\n\n{gender} {name}, {greeting}!\n\nAcusamos o recebimento da sua manifestação por meio do WhatsApp, sob protocolo de n.º {protocol} e informamos que sua solicitação de cancelamento foi devidamente registrada e direcionada ao setor responsável para análise e providências.\n\nO setor responsável de cancelamento realizará contato em até 3 dias úteis, para conclusão da solicitação e formalização do cancelamento.\n\nAntecipamos que o plano possui uma vigência mínima de 12 meses, portanto {multa}\n\n{mensalidade}\n\nCaso seja de seu interesse, podemos encaminhar um boleto bancário com vencimento em até 5 dias a contar da data de hoje, ou, alternativamente, realizar uma nova tentativa de cobrança no cartão de crédito previamente cadastrado. Se preferir efetuar o pagamento utilizando outro cartão de crédito, também podemos encaminhar um link de pagamento para que a transação seja realizada de forma rápida e segura.`,
+{gender} {name}, {greeting}!
 
-  coberturaTomo: `Título: ODONTOGROUP - COBERTURA DO PLANO\n\n{gender} {name}, {greeting}!\n\nEm atendimento à sua solicitação registrada por meio do protocolo de n.º {protocol}, informamos que, conforme as regras contratuais do seu plano, não há cobertura para a realização de tomografia.\n\nRessaltamos, contudo, que o seu plano contempla a cobertura de diversos procedimentos odontológicos, tais como: restaurações, profilaxia (limpeza), atendimentos em odontopediatria, extração de sisos, exames radiológicos convencionais, tratamento de canal (endodontia), pino, coroa, entre outros procedimentos previstos em contrato.\n\nPara consultar a relação completa de procedimentos cobertos, orientamos que realize a verificação por meio do nosso aplicativo ou pelo portal do beneficiário em nosso site, seguindo os caminhos abaixo:\n\nAplicativo:\nPágina inicial > último ícone no canto inferior direito da tela > Meu Plano > Cobertura.\nSite:\nAcesse: https://odontogroup.s4e.com.br/sys/?TipoUsuario=1\nEm seguida: insira seu CPF e senha (a mesma utilizada no aplicativo) > Portal de Informações > Cobertura/Carência.`,
+Em atendimento à sua solicitação, realizada sob protocolo de n° {protocol}, listamos abaixo as informações referentes ao agendamento de sua consulta:
 
-  inclusaoDepGDFC: `Título: ODONTOGROUP - INCLUSÃO DE DEPENDENTES\n\n{gender} {name}, {greeting}!\n\nAcusamos o recebimento da sua solicitação por meio do protocolo de n.º {protocol} e inicialmente gostaríamos de esclarecer que o ressarcimento de 99% do valor do plano escolhido (limitado a R$ 30,00) é válido somente para o titular conforme prevê o edital.\n\nOs dependentes não receberão o ressarcimento do GDF, porém o valor para inclusão de dependentes no contrato GDF é abaixo do valor comercializado de forma particular, além dos dependentes inclusos entrarem também sem carência para nenhum procedimento.\n\nConforme previsto no edital, podem ser dependentes:\nCônjuge, companheiro(a), abrangendo também o companheiro(a) de união homo afetiva;\nPai ou Mãe;\nFilho(a) ou enteado(a);\nQue podem optar por quatro modalidades de plano, sendo eles:\n\nOdontoClínico: Possui cobertura para mais de 200 procedimentos, como por exemplo: restaurações, limpeza, odontopediatria, extração de siso, radiologia, canal, bloco, pino e coroa total em cerômero para os dentes da frente de canino.\nValor para o titular: R$ 0,30 (ressarcimento de R$ 29,70 realizado pelo GDF).\nValor por dependente: R$ 22,90.\nAbrangência Titular: Nacional.\nAbrangência Dependente: AL, DF, GO, PE e TO.\n\nOdonto Doc: Possui toda cobertura do plano Odonto Clínico, além da documentação inicial, final e a instalação do aparelho fixo metálico convencional.\nValor para o titular: R$ 2,90 (ressarcimento de R$ 30,00 realizado pelo GDF).\nValor por dependente: R$ 32,90.\nAbrangência Titular: Nacional.\nAbrangência Dependente: AL, DF, GO, PE e TO.\n\nOdonto Prótese: Possui toda cobertura do plano Odonto Clínico, além da placa de bruxismo, clareamento convencional, coroas unitárias em resina para todos os dentes, prótese parcial removível com grampo, prótese parcial removível provisória e a prótese total.\nValor para o titular: R$ 59,90 (ressarcimento de R$ 30,00 realizado pelo GDF).\nValor por dependente: R$ 89,90.\nAbrangência Titular: Nacional.\nAbrangência Dependente: AL, DF, GO, PE e TO.\n\nOdonto Orto: Possui toda a cobertura do Odonto Doc, além das manutenções mensais do aparelho e o clareamento caseiro convencional após a retirada do aparelho.\nValor para o titular: R$ 80,00 (ressarcimento de R$ 30,00 realizado pelo GDF).\nValor por dependente: R$ 110,00.\nAbrangência Titular: Nacional.\nAbrangência Dependente: AL, DF, GO, PE e TO.\n\nCaso deseje prosseguir com a inclusão, por gentileza, preencha corretamente o formulário de inclusão de dependentes que segue em anexo.\n\nCaso o dependente não se enquadre nos parentescos listados anteriormente, podemos encaminhar a documentação ao órgão responsável para tentativa de processamento do desconto em folha. Contudo, ressaltamos que a efetivação da inclusão dependerá da validação e aceite do próprio órgão, podendo haver a recusa da solicitação conforme os critérios administrativos adotados.\n\nDestacamos também, que novas inclusões de dependentes em planos já ativos, tem seu início de vigência sempre para o mês seguinte.\n\nReforçamos que todos os planos ofertados possuem a vigência padrão de 12 meses, sendo necessário permanecer ativo durante o período de vigência. Após os 12 meses, caso possua interesse em cancelar o plano, é necessário entrar em contato conosco.`,
+Avaliação - {agendEspecialidade}
+Dia: {agendDataHora}
+Clínica: {agendClinica}
 
-  envioToken: `Título: ODONTOGROUP - ENVIO DE TOKEN\n\n{gender} {name}, {greeting}!\n\nEm atenção à sua solicitação, registrada por meio do protocolo nº {protocol}, encaminhamos abaixo o link contendo o token de acesso, por meio do qual será possível realizar a alteração ou atualização do cartão de crédito utilizado para o pagamento das mensalidades do seu plano odontológico:\n\nXXXXXXXXXXXX\n\nOrientamos que o procedimento seja realizado dentro do prazo de validade do token, a fim de garantir o cadastro em tempo hábil.\n\nRessaltamos que o cartão de crédito informado deve, obrigatoriamente, estar em nome do atual responsável financeiro do contrato, em conformidade com as cláusulas contratuais e com a LGPD.`,
+Por gentileza, chegue à consulta com antecedência de 10 minutos e leve raio-x, caso possua, isso facilita o seu atendimento.
 
-  envioProtocolo: `Título: ODONTOGROUP - ENVIO DE PROTOCOLO\n\n{gender} {name}, {greeting}!\n\nEm atendimento à sua solicitação, informamos que o número de protocolo referente ao seu atendimento é nº {protocol}.\n\nSalientamos que este número deve ser utilizado como referência em eventuais contatos futuros, possibilitando maior agilidade na localização e acompanhamento da sua solicitação.`,
+Obs.: Caso não consiga comparecer ao agendamento informado acima, na data e horário marcado, por gentileza, orientamos que entre em contato diretamente com a clínica para realizar o reagendamento de sua consulta no prazo indicado (24horas de antecedência).`,
 
-  posVendas: `Título: ODONTOGROUP - BOAS-VINDAS PÓS-VENDAS\n\n{gender} {name}, {greeting}!\n\nSeja muito bem-vindo(a) ao nosso plano odontológico! Parabenizamos você por essa excelente escolha. Estamos à disposição para acompanhá-lo(a) em toda a sua jornada conosco.\n \nCaso tenha dúvidas ou precise de qualquer informação, nosso Serviço de Atendimento ao Cliente (SAC) está preparado para atendê-lo(a) com atenção e cuidado. Será um prazer falar com você.\n \nInformamos que tentamos contato por telefone, por meio do número xxxxxxxxxxxx, porém, infelizmente, não obtivemos sucesso.\n \nAnexamos a este e-mail o Guia de Leitura Contratual, que contém todas as informações importantes sobre o plano contratado, incluindo:\n \n- Detalhamento da cobertura do seu plano;\n- Vigência contratual de 12 meses;\n- Cláusula de multa rescisória de 20% sobre as parcelas vincendas, conforme estipulado em contrato; Renovação automática.\n- Informações sobre os prazos de carência, contados a partir de:\n \nProtocolo de atendimento: {protocol}.`
+  carteirinha: `Título: ODONTOGROUP - CARTEIRINHA
+
+{gender} {name}, {greeting}!
+
+Em atenção à sua solicitação realizada por meio do protocolo de n.º {protocol}, segue em anexo sua carteirinha virtual do plano odontológico.
+
+Baixe nosso aplicativo para acessá-la de forma simples e online. 
+Caso ainda não possua nosso aplicativo, basta buscar por "OdontoGroup Associado" na loja de aplicativos do seu dispositivo celular e realizar o primeiro acesso.`,
+
+  semCPF: `Prezado(a) cliente, {greeting}!
+
+Acusamos o recebimento da sua solicitação e para que possamos localizar o seu contrato, informe-nos seu nome completo, CPF e telefone.`,
+
+  formularioReembolso: `Título: ODONTOGROUP - FORMULÁRIO DE REQUISIÇÃO DE REEMBOLSO
+
+{gender} {name}, {greeting}!
+
+Em atenção à sua solicitação realizada através do protocolo de n.º {protocol}, segue em anexo o Formulário de Requisição de Reembolso. 
+
+Para que nossa operadora possa prosseguir com a análise do reembolso, solicitamos a leitura do formulário com atenção, devido às exigências quanto ao preenchimento de todos os campos existentes para andamento do processo de reembolso.
+
+Lembrando que, no formulário há campos referentes aos tratamentos odontológicos onde o profissional cirurgião-dentista deverá preencher, carimbar e assinar.
+
+Juntamente ao formulário de reembolso, é necessário encaminhar as radiografias anteriores e posteriores ao procedimento realizado.
+
+Solicitamos também que encaminhe, juntamente às documentações já mencionadas, a nota fiscal ou recibo de pagamento emitidos pelo Cirurgião-Dentista, com o valor correspondente aos tratamentos descritos no formulário, além do comprovante de pagamento bancário.
+
+Esclarecemos que o comprovante de pagamento referido pode ser a via emitida pela máquina no caso de pagamento via cartão, um print do desconto em seu aplicativo bancário ou comprovante de transferência no caso de pagamento por PIX ou transferência bancária.
+
+Ao realizar o envio da documentação completa e análise da solicitação pela Operadora, sendo essa aprovada, o pagamento do reembolso será em até 30 dias.`,
+
+  boleto: `Título: ODONTOGROUP - BOLETO
+
+{gender} {name}, {greeting}!
+
+Em atenção à sua solicitação realizada através do protocolo de n.º {protocol}, segue em anexo o boleto referente ao período solicitado.`,
+
+  guiaContratual: `Título: ODONTOGROUP - GUIA DE LEITURA CONTRATUAL
+
+{gender} {name}, {greeting}!
+
+Em atenção à sua solicitação realizada por meio do protocolo de n.º {protocol}, segue em anexo o Guia de Leitura Contratual contendo todas as informações referente ao produto contratado, inclusive a cobertura do plano odontológico.`,
+
+  exclusaoProposta: `Título: ODONTOGROUP - EXCLUSÃO DE PROPOSTA
+
+Prezados, {greeting}!
+
+Conforme atendimento realizado através do protocolo de n.º {protocol}, por gentileza, efetuar o cancelamento da proposta em aberto nos dados abaixo:
+
+Nome: [NOME COMPLETO]
+CPF: [CPF]`,
+
+  demonstrativoIR: `Título: ODONTOGROUP - DEMONSTRATIVO PARA IMPOSTO DE RENDA
+
+{gender} {name}, {greeting}!
+
+Em atenção à sua solicitação realizada por meio do protocolo de n.º {protocol}, segue em anexo o demonstrativo para comprovação de imposto de renda referente ao ano de 2024. 
+
+Acrescentamos que o demonstrativo também está disponível em nosso aplicativo "OdontoGroup – Associado".`,
+
+  demonstrativoPJ: `Título: ODONTOGROUP - DEMONSTRATIVO PARA IMPOSTO DE RENDA - PJ
+
+{gender} {name}, {greeting}!
+
+Em atendimento à sua solicitação realizada por meio do protocolo de n.º {protocol}, informamos que, por se tratar de um plano empresarial, o seu demonstrativo para Imposto de Renda deve ser solicitado diretamente ao setor de Recursos Humanos (RH) da empresa xxxxxxxxxxxxx.
+
+Isso ocorre porque, nessa modalidade de contrato, os valores relacionados ao plano são administrados e registrados pela própria empresa responsável pelo convênio, que possui acesso ao detalhamento das contribuições utilizadas para fins de declaração.
+Dessa forma, orientamos que entre em contato com a empresa/sindicato/órgão para solicitar o documento ou obter as orientações necessárias para emissão do demonstrativo.`,
+
+
+
+  alteracaoPlano: `Título: ODONTOGROUP - ALTERAÇÃO DE PLANO
+
+{gender} {name}, {greeting}!
+
+Acusamos o recebimento da sua solicitação por meio do protocolo de n.º {protocol} e informamos que a documentação encaminhada foi devidamente direcionada ao setor responsável para análise e finalização do processo.
+
+Esclarecemos que, a partir do primeiro dia do mês seguinte, a alteração estará vigente em seu cadastro e o plano poderá ser utilizado normalmente, conforme as regras e diretrizes do seu plano odontológico.
+
+Reforçamos que é possível realizar o upgrade para qualquer um de nossos planos odontológicos a qualquer momento, de forma simples e sem a necessidade de aguardar um prazo específico. Entretanto, para realizar a regressão para um plano de menor valor (downgrade), é necessário observar o prazo mínimo de 12 meses a partir da última alteração contratual.`,
+
+  contratoNovo: `Título: ODONTOGROUP - INFORMAÇÕES SOBRE O PLANO
+
+{gender} {name}, {greeting}!
+
+Acusamos o recebimento da sua solicitação por meio do protocolo de n.º {protocol} e informamos que o início de vigência do seu plano está previsto para o dia XXXXX. A partir desta data, o acesso ao aplicativo estará liberado, permitindo a consulta detalhada dos serviços contratados, bem como demais funcionalidades disponíveis para o seu plano.
+
+Adicionalmente, informamos que, em breve, nossa equipe de boas-vindas entrará em contato para confirmar os seus dados cadastrais e fornecer todas as orientações necessárias sobre os benefícios contratados, garantindo que você aproveite ao máximo tudo o que o plano oferece.`,
+
+  solicitaCancelamento: `Título: ODONTOGROUP - SOLICITAÇÃO DE CANCELAMENTO
+
+{gender} {name}, {greeting}!
+
+Acusamos o recebimento da sua manifestação por meio do WhatsApp, sob protocolo de n.º {protocol} e informamos que sua solicitação de cancelamento foi devidamente registrada e direcionada ao setor responsável para análise e providências.
+
+O setor responsável de cancelamento realizará contato em até 3 dias úteis, para conclusão da solicitação e formalização do cancelamento.
+
+Antecipamos que o plano possui uma vigência mínima de 12 meses, portanto {multa}
+
+{mensalidade}
+
+Caso seja de seu interesse, podemos encaminhar um boleto bancário com vencimento em até 5 dias a contar da data de hoje, ou, alternativamente, realizar uma nova tentativa de cobrança no cartão de crédito previamente cadastrado. Se preferir efetuar o pagamento utilizando outro cartão de crédito, também podemos encaminhar um link de pagamento para que a transação seja realizada de forma rápida e segura.`,
+
+  coberturaTomo: `Título: ODONTOGROUP - COBERTURA DO PLANO
+
+{gender} {name}, {greeting}!
+
+Em atendimento à sua solicitação registrada por meio do protocolo de n.º {protocol}, informamos que, conforme as regras contratuais do seu plano, não há cobertura para a realização de tomografia.
+
+Ressaltamos, contudo, que o seu plano contempla a cobertura de diversos procedimentos odontológicos, tais como: restaurações, profilaxia (limpeza), atendimentos em odontopediatria, extração de sisos, exames radiológicos convencionais, tratamento de canal (endodontia), pino, coroa, entre outros procedimentos previstos em contrato.
+
+Para consultar a relação completa de procedimentos cobertos, orientamos que realize a verificação por meio do nosso aplicativo ou pelo portal do beneficiário em nosso site, seguindo os caminhos abaixo:
+
+Aplicativo:
+Página inicial > último ícone no canto inferior direito da tela > Meu Plano > Cobertura.
+Site:
+Acesse: https://odontogroup.s4e.com.br/sys/?TipoUsuario=1
+Em seguida: insira seu CPF e senha (a mesma utilizada no aplicativo) > Portal de Informações > Cobertura/Carência.`,
+
+  inclusaoDepGDFC: `Título: ODONTOGROUP - INCLUSÃO DE DEPENDENTES
+
+{gender} {name}, {greeting}!
+
+Acusamos o recebimento da sua solicitação por meio do protocolo de n.º {protocol} e inicialmente gostaríamos de esclarecer que o ressarcimento de 99% do valor do plano escolhido (limitado a R$ 30,00) é válido somente para o titular conforme prevê o edital.
+
+Os dependentes não receberão o ressarcimento do GDF, porém o valor para inclusão de dependentes no contrato GDF é abaixo do valor comercializado de forma particular, além dos dependentes inclusos entrarem também sem carência para nenhum procedimento.
+
+Conforme previsto no edital, podem ser dependentes:
+Cônjuge, companheiro(a), abrangendo também o companheiro(a) de união homo afetiva;
+Pai ou Mãe;
+Filho(a) ou enteado(a);
+Que podem optar por quatro modalidades de plano, sendo eles:
+
+OdontoClínico: Possui cobertura para mais de 200 procedimentos, como por exemplo: restaurações, limpeza, odontopediatria, extração de siso, radiologia, canal, bloco, pino e coroa total em cerômero para os dentes da frente de canino.
+Valor para o titular: R$ 0,30 (ressarcimento de R$ 29,70 realizado pelo GDF).
+Valor por dependente: R$ 22,90.
+Abrangência Titular: Nacional.
+Abrangência Dependente: AL, DF, GO, PE e TO.
+
+Odonto Doc: Possui toda cobertura do plano Odonto Clínico, além da documentação inicial, final e a instalação do aparelho fixo metálico convencional.
+Valor para o titular: R$ 2,90 (ressarcimento de R$ 30,00 realizado pelo GDF).
+Valor por dependente: R$ 32,90.
+Abrangência Titular: Nacional.
+Abrangência Dependente: AL, DF, GO, PE e TO.
+
+Odonto Prótese: Possui toda cobertura do plano Odonto Clínico, além da placa de bruxismo, clareamento convencional, coroas unitárias em resina para todos os dentes, prótese parcial removível com grampo, prótese parcial removível provisória e a prótese total.
+Valor para o titular: R$ 59,90 (ressarcimento de R$ 30,00 realizado pelo GDF).
+Valor por dependente: R$ 89,90.
+Abrangência Titular: Nacional.
+Abrangência Dependente: AL, DF, GO, PE e TO.
+
+Odonto Orto: Possui toda a cobertura do Odonto Doc, além das manutenções mensais do aparelho e o clareamento caseiro convencional após a retirada do aparelho.
+Valor para o titular: R$ 80,00 (ressarcimento de R$ 30,00 realizado pelo GDF).
+Valor por dependente: R$ 110,00.
+Abrangência Titular: Nacional.
+Abrangência Dependente: AL, DF, GO, PE e TO.
+
+Caso deseje prosseguir com a inclusão, por gentileza, preencha corretamente o formulário de inclusão de dependentes que segue em anexo.
+
+Caso o dependente não se enquadre nos parentescos listados anteriormente, podemos encaminhar a documentação ao órgão responsável para tentativa de processamento do desconto em folha. Contudo, ressaltamos que a efetivação da inclusão dependerá da validação e aceite do próprio órgão, podendo haver a recusa da solicitação conforme os critérios administrativos adotados.
+
+Destacamos também, que novas inclusões de dependentes em planos já ativos, tem seu início de vigência sempre para o mês seguinte.
+
+Reforçamos que todos os planos ofertados possuem a vigência padrão de 12 meses, sendo necessário permanecer ativo durante o período de vigência. Após os 12 meses, caso possua interesse em cancelar o plano, é necessário entrar em contato conosco.`,
+
+  envioToken: `Título: ODONTOGROUP - ENVIO DE TOKEN
+
+{gender} {name}, {greeting}!
+
+Em atenção à sua solicitação, registrada por meio do protocolo nº {protocol}, encaminhamos abaixo o link contendo o token de acesso, por meio do qual será possível realizar a alteração ou atualização do cartão de crédito utilizado para o pagamento das mensalidades do seu plano odontológico:
+
+XXXXXXXXXXXX
+
+Orientamos que o procedimento seja realizado dentro do prazo de validade do token, a fim de garantir o cadastro em tempo hábil.
+
+Ressaltamos que o cartão de crédito informado deve, obrigatoriamente, estar em nome do atual responsável financeiro do contrato, em conformidade com as cláusulas contratuais e com a LGPD.`,
+
+  envioProtocolo: `Título: ODONTOGROUP - ENVIO DE PROTOCOLO
+
+{gender} {name}, {greeting}!
+
+Em atendimento à sua solicitação, informamos que o número de protocolo referente ao seu atendimento é nº {protocol}.
+
+Salientamos que este número deve ser utilizado como referência em eventuais contatos futuros, possibilitando maior agilidade na localização e acompanhamento da sua solicitação.`,
+
+  posVendas: `Título: ODONTOGROUP - BOAS-VINDAS PÓS-VENDAS
+
+{gender} {name}, {greeting}!
+
+Seja muito bem-vindo(a) ao nosso plano odontológico! Parabenizamos você por essa excelente escolha. Estamos à disposição para acompanhá-lo(a) em toda a sua jornada conosco.
+ 
+Caso tenha dúvidas ou precise de qualquer informação, nosso Serviço de Atendimento ao Cliente (SAC) está preparado para atendê-lo(a) com atenção e cuidado. Será um prazer falar com você.
+ 
+Informamos que tentamos contato por telefone, por meio do número xxxxxxxxxxxx, porém, infelizmente, não obtivemos sucesso.
+ 
+Anexamos a este e-mail o Guia de Leitura Contratual, que contém todas as informações importantes sobre o plano contratado, incluindo:
+ 
+- Detalhamento da cobertura do seu plano;
+- Vigência contratual de 12 meses;
+- Cláusula de multa rescisória de 20% sobre as parcelas vincendas, conforme estipulado em contrato; Renovação automática.
+- Informações sobre os prazos de carência, contados a partir de:
+ 
+Protocolo de atendimento: {protocol}.`
 };
 
 function togglePhoneField() {
@@ -202,10 +409,12 @@ function togglePhoneField() {
   const cancelamentoGroup = document.getElementById("cancelamentoGroup");
   const isSemCPF = purpose === 'semCPF';
 
+  // Hide/show fields that are not needed for "Solicitar o CPF"
   document.getElementById("nameGroup").style.display = isSemCPF ? 'none' : '';
   document.getElementById("protocolGroup").style.display = isSemCPF ? 'none' : '';
   document.getElementById("genderGroup").style.display = isSemCPF ? 'none' : '';
 
+  // Clear values when hiding
   if (isSemCPF) {
     document.getElementById("name").value = '';
     document.getElementById("protocol").value = '';
@@ -232,15 +441,10 @@ function togglePhoneField() {
 
 // ─── Enter key shortcuts ───
 document.addEventListener('DOMContentLoaded', function() {
-  [
-    ['inputNumber', consultarPlano],
-    ['name', generateText],
-    ['protocol', generateText],
-    ['valorMensalidade', calcularMulta],
-    ['mesesFaltantes', calcularMulta],
-    ['valorTotalProduto', calcularProporcional],
-    ['quantidadeDias', calcularProporcional],
-    ['mesMensalidade', generateText]
+  [['inputNumber', consultarPlano], ['name', generateText], ['protocol', generateText],
+   ['valorMensalidade', calcularMulta], ['mesesFaltantes', calcularMulta],
+   ['valorTotalProduto', calcularProporcional], ['quantidadeDias', calcularProporcional],
+   ['mesMensalidade', generateText]
   ].forEach(([id, fn]) => {
     const el = document.getElementById(id);
     if (el) el.addEventListener('keypress', e => { if (e.key === 'Enter') fn(); });
@@ -488,3 +692,4 @@ function consultarPlano() {
   r = planos[n] || '<span style="color:rgba(255,180,80,0.9)">⚠ Código não localizado. Revise-o e tente novamente.</span>';
   document.getElementById("resultado").innerHTML = r;
 }
+</script>
